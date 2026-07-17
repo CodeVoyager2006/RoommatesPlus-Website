@@ -7,7 +7,7 @@
 ## About
 
 ROOMMATESPLUS is a roommate-matching platform. This repository contains the
-official **ROOMMATESPLUS website** — the public-facing marketing and
+official **ROOMMATESPLUS website**, the public-facing marketing and
 informational site for the product.
 
 ---
