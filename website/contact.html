@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — roommates+</title>
+  <meta name="description" content="Questions, feedback, partnerships or press — say hey to the roommates+ team. We actually reply." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="/" class="brand">roommates<span class="brand-plus">+</span></a>
+      <nav class="nav-menu" aria-label="Main">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/features.html" class="nav-item">Features</a>
+        <a href="/about.html" class="nav-item">About</a>
+        <a href="/blog.html" class="nav-item">Blog</a>
+        <a href="/contact.html" class="nav-item active">Contact</a>
+      </nav>
+      <a href="/#download" class="btn btn-coral nav-get">Get the App</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/features.html">Features</a>
+    <a href="/about.html">About</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html" class="active">Contact</a>
+    <a href="/#download" class="btn btn-coral">Get the App</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="subhero">
+    <div class="blob blob-peach" style="width:440px;height:440px;top:-120px;left:-130px;"></div>
+    <div class="blob blob-sky" style="width:400px;height:400px;top:-40px;right:-140px;animation-delay:4s;"></div>
+    <div class="container">
+      <span class="eyebrow" data-reveal>Contact</span>
+      <h1 class="display" data-reveal style="--d:.08s">Say hey 👋</h1>
+      <p class="lead" data-reveal style="--d:.16s">Questions, feedback, partnership ideas, or a roommate horror story you need to share — we read everything.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section" style="padding-top:24px;">
+    <div class="container contact-grid">
+      <div class="contact-tiles">
+        <div class="card contact-tile" data-reveal="left">
+          <div class="icon-tile av-peach">📮</div>
+          <div>
+            <h3>Email us</h3>
+            <p>For anything and everything:<br /><a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a></p>
+          </div>
+        </div>
+        <div class="card contact-tile" data-reveal="left" style="--d:.08s">
+          <div class="icon-tile av-sky">🤝</div>
+          <div>
+            <h3>Partnerships</h3>
+            <p>Property owner or campus org?<br /><a href="/partner.html">Partner with us →</a></p>
+          </div>
+        </div>
+        <div class="card contact-tile" data-reveal="left" style="--d:.16s">
+          <div class="icon-tile av-mint">📰</div>
+          <div>
+            <h3>Press</h3>
+            <p>Writing about roommates+? Email us with "Press" in the subject and we'll get you what you need.</p>
+          </div>
+        </div>
+        <div class="card contact-tile" data-reveal="left" style="--d:.24s">
+          <div class="icon-tile av-lilac">⏰</div>
+          <div>
+            <h3>Support hours</h3>
+            <p>Monday–Friday, 9am–6pm ET.<br />We usually reply within one business day.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card contact-form" data-reveal="right">
+        <h3>Send us a message</h3>
+        <div class="form-success" role="status">🎉 Message sent! We'll get back to you within a business day.</div>
+        <form data-fake-submit>
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" type="text" name="name" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" type="email" name="email" placeholder="you@school.edu" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-topic">Topic</label>
+            <select id="cf-topic" name="topic" required>
+              <option value="" disabled selected>Pick a topic…</option>
+              <option>General question</option>
+              <option>App support</option>
+              <option>Premium &amp; billing</option>
+              <option>Partnerships</option>
+              <option>Press</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" placeholder="Tell us what's up…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-coral btn-lg" style="width:100%;">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>FAQ</span>
+        <h2 class="headline" data-reveal style="--d:.08s">Asked a lot. Answered once.</h2>
+      </div>
+      <div class="faq" data-reveal>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Is roommates+ free?<span class="chev">+</span></button>
+          <div class="faq-a"><p>Yes — downloading, swiping, matching and chatting are all free. Premium adds power features like unlimited swipes and seeing everyone who liked you, but the free tier is a complete experience, not a demo.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">How does Premium work and what does it cost?<span class="chev">+</span></button>
+          <div class="faq-a"><p>Premium is CAD $10/week or CAD $30 every 4 weeks (save 25%). It unlocks unlimited swipes, the full who-liked-you list, unlimited cold messages before matching, advanced lifestyle filters, AI matching 10×/day, and on-demand profile analysis. Every plan starts with a 7-day free trial and you can cancel anytime.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">How do you verify profiles?<span class="chev">+</span></button>
+          <div class="faq-a"><p>Accounts are verified at signup, and Premium users can run an on-demand background check on a profile before committing to anything. If a profile ever feels off, report it in-app and our team takes a look.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">I'm a property owner or landlord — can I use it?<span class="chev">+</span></button>
+          <div class="faq-a"><p>Yes! roommates+ has a dedicated owner mode for listing and managing units, and seekers interested in your place can find each other. Head to <a href="/partner.html" style="color:var(--coral-press);font-weight:700;">Partner With Us</a> for details.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Which campuses are you on?<span class="chev">+</span></button>
+          <div class="faq-a"><p>We're live around 30+ campuses and growing every semester. If your school isn't covered yet, join the <a href="/waitlist/" style="color:var(--coral-press);font-weight:700;">waitlist</a> and we'll let you know the moment we land.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">What happens to my data?<span class="chev">+</span></button>
+          <div class="faq-a"><p>Your profile is only shown to people in your matching pool, and we never sell personal data. The full details live in our <a href="/privacy-policy.html" style="color:var(--coral-press);font-weight:700;">Privacy Policy</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="/" class="brand brand-light">roommates<span class="brand-plus">+</span></a>
+          <p>Find your place. Find your people. The swipe-first way to find roommates you actually vibe with.</p>
+          <div class="store-badges">
+            <a href="#" class="store-badge"><span class="sb-icon"></span><span><small>Download on the</small><strong>App Store</strong></span></a>
+            <a href="#" class="store-badge"><span class="sb-icon">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/features.html">Features</a></li>
+            <li><a href="/#premium">Premium</a></li>
+            <li><a href="/waitlist/">Waitlist</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/partner.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; 2026 roommates+ — A S4S Product. All rights reserved.</span>
+        <a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

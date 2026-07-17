@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <title>roommates+ · Manage subscription</title>
+  <style>
+    :root{--coral:#E06664;--coral-press:#C9514F;--coral-soft:#FBE9E8;--bg:#F5F6F8;--ink1:#18181B;--ink2:#6B6E76;}
+    html,body{overscroll-behavior:none}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;min-height:100dvh;display:flex;align-items:center;align-items:safe center;justify-content:center;background:var(--bg);
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink1);padding:24px}
+    .card{background:#fff;border-radius:24px;padding:40px 32px;max-width:420px;width:100%;text-align:center;box-shadow:0 12px 40px rgba(24,24,27,.08)}
+    .wordmark{font-weight:800;font-size:20px;letter-spacing:-.5px;margin-bottom:24px}
+    .wordmark span{color:var(--coral)}
+    .spinner{width:44px;height:44px;border:4px solid var(--coral-soft);border-top-color:var(--coral);border-radius:50%;margin:8px auto 20px;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    h1{font-size:22px;letter-spacing:-.5px;margin:0 0 8px}
+    p{color:var(--ink2);font-size:15px;line-height:1.6;margin:0 0 8px}
+    .btn{display:inline-block;margin-top:20px;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:14px 28px;border-radius:999px;border:none;cursor:pointer}
+    .btn:active{background:var(--coral-press)}
+    .hidden{display:none}
+    .emoji{font-size:44px;margin-bottom:12px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="wordmark">roommates<span>+</span></div>
+    <div id="loading">
+      <div class="spinner"></div>
+      <h1>Opening your subscription…</h1>
+      <p>One moment while we open your secure billing settings.</p>
+    </div>
+    <div id="error" class="hidden">
+      <div class="emoji">😕</div>
+      <h1>This link can’t be opened</h1>
+      <p id="errmsg">Your secure link has expired. Open the app and tap “Manage subscription” again.</p>
+      <a class="btn" href="roommatesswipe://paywall-return">Return to the app</a>
+    </div>
+  </div>
+  <script>
+    var FN = 'https://sxztysjayjptokplamtn.supabase.co/functions/v1';
+    var KEY = 'sb_publishable_nmogEL8iSQvsbpE51--G6g_9k9YLPoP';
+    function showError(msg){
+      document.getElementById('loading').classList.add('hidden');
+      var e = document.getElementById('error'); e.classList.remove('hidden');
+      if (msg) document.getElementById('errmsg').textContent = msg;
+    }
+    (async function(){
+      var params = new URLSearchParams(location.search);
+      var h = params.get('h');
+      history.replaceState(null, '', location.pathname); // strip the token from URL + history
+      if (!h) { showError(); return; }
+      try {
+        var res = await fetch(FN + '/start-portal', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'apikey': KEY, 'Authorization': 'Bearer ' + KEY },
+          body: JSON.stringify({ h: h })
+        });
+        var data = await res.json().catch(function(){ return {}; });
+        if (res.ok && data && data.url) { location.replace(data.url); return; }
+        showError(data && data.error ? data.error : null);
+      } catch (e) { showError('Something went wrong. Please try again from the app.'); }
+    })();
+  </script>
+</body>
+</html>

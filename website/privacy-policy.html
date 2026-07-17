@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — roommates+</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    .legal-shell { padding: 0 24px 96px; }
+    .legal-card {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 36px 32px;
+    }
+    .legal-card h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; line-height: 1.2; margin: 28px 0 12px; }
+    .legal-card h3 { font-size: 1rem; margin: 24px 0 10px; color: var(--text); }
+    .legal-card p, .legal-card li { color: var(--text-muted); font-weight: 600; line-height: 1.75; }
+    .legal-card p + p { margin-top: 12px; }
+    .legal-card ol { margin: 10px 0 0 22px; display: grid; gap: 8px; }
+    .legal-card strong { color: var(--text); }
+    @media (max-width: 768px) { .legal-card { padding: 24px 20px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo" style="text-decoration:none;">roommates<span style="color:var(--primary)">+</span></a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/features.html" class="nav-link">Features</a>
+      <a href="/contact.html" class="nav-link">Contact</a>
+      <a href="/partner.html" class="nav-link">Partner With Us</a>
+    </div>
+    <a href="/#download" class="nav-cta">Get the App</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about.html" class="mobile-nav-link">About</a>
+    <a href="/features.html" class="mobile-nav-link">Features</a>
+    <a href="/contact.html" class="mobile-nav-link">Contact</a>
+    <a href="/partner.html" class="mobile-nav-link">Partner With Us</a>
+    <a href="/#download" class="mobile-nav-cta">Get the App</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="section-label">Legal</div>
+    <h1>Privacy<br /><span class="highlight">Policy</span></h1>
+    <p>Last updated: 2026-06-23</p>
+  </div>
+
+  <section class="legal-shell">
+    <article class="legal-card">
+      <p><strong>Service provider:</strong> Partnership between Eunchan Park and Minh Son Truong</p>
+      <p><strong>Contact:</strong> service@roommatesplus.ca</p>
+      <p>This Privacy Policy explains how roommates+ / RoommatesSwipe ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>") collects, uses, discloses, and protects personal information when you use our app and related services (the "<strong>Service</strong>"). The Service is a roommate-matching app that helps people find compatible roommates by creating a profile, swiping on other users, matching when interest is mutual, and chatting in-app. By using the Service, you acknowledge this Privacy Policy.</p>
+
+      <h2>1. Scope</h2>
+      <p>This Privacy Policy applies to personal information processed through the Service, including account creation and authentication, profile and roommate-preference setup, photo uploads, swiping and matching, in-app messaging, reporting, subscriptions and payments, and location features.</p>
+
+      <h2>2. Information We Collect</h2>
+      <ol>
+        <li><strong>Account and authentication data:</strong> email, phone number, account/user ID, login credentials, and session/security metadata (Supabase Auth). If you use Sign in with Apple, the identifier and relay email Apple provides.</li>
+        <li><strong>Profile and identity data:</strong> name, profile and gallery photos, date of birth and age, gender, pronouns, occupation, employer, school/study program, student status, languages, hometown, and city/neighbourhood.</li>
+        <li><strong>Roommate-matching attributes:</strong> sleep schedule, cleanliness, noise level, guest frequency, social orientation, cooking, work-from-home, pets, hobbies, budget, and move-in timing.</li>
+        <li><strong>Sensitive attributes you choose to provide</strong> (see Section 5): sexual orientation / LGBTQ+ identity or friendliness, smoking, drinking, cannabis and other substance use, allergies (health), and origin/background details. Optional, but the matching algorithm uses them; if blank, you may not be matched with or shown to others.</li>
+        <li><strong>Housing preferences and search criteria:</strong> the housing you want and the criteria you set to filter other users (age range, genders, occupations, origins, languages, lifestyle ranges, "verified only," "LGBTQ-friendly only").</li>
+        <li><strong>Content you create:</strong> profile prompt answers, chat messages, feedback you submit, and the reason and details you include when reporting a user.</li>
+        <li><strong>Activity and interaction data:</strong> swipe (like/pass) decisions, matches, chats and messages, in-app notifications, and daily usage counters used to enforce plan limits.</li>
+        <li><strong>Subscription and payment data:</strong> subscription status, plan/interval, trial and renewal/cancellation dates, Stripe customer/subscription identifiers, and payment history (invoice IDs, amounts, currency, status, invoice PDFs). Full card details are handled by Stripe, not stored by us.</li>
+        <li><strong>Device and location data:</strong> with your permission, device location to centre the map and label a city, and camera/photo-library access to upload photos. Location text you search is sent to Google Maps Platform.</li>
+        <li><strong>Reports and moderation data:</strong> reporter and reported user IDs, names and emails, reason, free-text details/context, and report status.</li>
+        <li><strong>Operational, log, and security data:</strong> service logs, request metadata, and diagnostics from infrastructure providers.</li>
+      </ol>
+
+      <h2>3. How We Collect Information</h2>
+      <ol>
+        <li><strong>Directly from you</strong> when you register, build your profile, set preferences, upload photos, chat, submit feedback, report a user, or subscribe.</li>
+        <li><strong>From your activity</strong> in the Service (swipes, matches, messages, usage counts).</li>
+        <li><strong>From your device</strong> (location, camera, photos), only with the permissions you grant.</li>
+        <li><strong>From our service providers</strong> (for example, subscription/payment events from Stripe and authentication events from Supabase Auth).</li>
+      </ol>
+
+      <h2>4. How We Use Information</h2>
+      <ol>
+        <li>Operate the core Service — profile, swipe/matching algorithm, matches, and in-app chat.</li>
+        <li>Authenticate you and keep your account and sessions secure.</li>
+        <li>Process payments, manage subscriptions and trials, and enforce free/premium usage limits.</li>
+        <li>Keep the community safe — review reports, investigate abuse and fraud, and enforce our Terms.</li>
+        <li>Provide location-based features (map and city search).</li>
+        <li>Communicate with you (in-app notifications, feedback/support responses).</li>
+        <li>Maintain, troubleshoot, and improve the Service.</li>
+        <li>Comply with legal obligations and respond to lawful requests.</li>
+      </ol>
+
+      <h2>5. Sensitive / Special-Category Information</h2>
+      <p>Some optional profile fields reveal information that certain laws (such as the GDPR/UK GDPR and Canadian privacy law) treat as sensitive — for example sexual orientation or LGBTQ+ identity, health details (allergies), substance use (smoking, drinking, cannabis, other drugs), and information that may reveal racial or ethnic origin (such as origin/background and languages).</p>
+      <ol>
+        <li><strong>Providing this information is voluntary.</strong> You decide whether to add it.</li>
+        <li><strong>Where we rely on consent, your explicit consent is the legal basis.</strong> By entering these details you explicitly consent to our processing them for compatibility matching and to displaying them to other users as part of your profile.</li>
+        <li><strong>They are used for matching and shown to others.</strong> Because the algorithm relies on these attributes, they are visible to users who view your profile and affect who you are shown to. If blank, you may be excluded from matches that require them.</li>
+        <li><strong>You can withdraw consent at any time</strong> by editing or clearing those fields, or by deleting your account. Withdrawal does not affect prior processing and may limit or prevent matching.</li>
+      </ol>
+      <p>Please do not include sensitive information about yourself or others in free-text fields (prompts, chats, reports) beyond what is necessary.</p>
+
+      <h2>6. Legal Bases (Where Applicable)</h2>
+      <ol>
+        <li><strong>Contract</strong> — to create your account and provide the matching, chat, and subscription services you request.</li>
+        <li><strong>Consent</strong> — for optional and sensitive profile attributes, and where else required (revocable at any time).</li>
+        <li><strong>Legitimate interests</strong> — to secure the Service, prevent abuse and fraud, and maintain and improve the platform.</li>
+        <li><strong>Legal obligation</strong> — compliance, lawful requests, tax/accounting for payments, and dispute handling.</li>
+      </ol>
+
+      <h2>7. How Information Is Shared</h2>
+      <ol>
+        <li><strong>With other users in-Service:</strong> your profile (photos, prompts, matching and sensitive attributes you add, approximate city/area) is shown to other users so they can decide whether to match, and your messages are shared with the users you match with.</li>
+        <li><strong>With service providers/processors</strong> under contractual safeguards: <strong>Supabase</strong> (authentication, database, photo storage, edge functions, realtime, logs); <strong>Stripe</strong> (subscription billing and payment processing, handling card data under its own privacy policy); <strong>Google Maps Platform</strong> (map display, place/city autocomplete, geocoding — your searched location text is sent to Google); <strong>Resend</strong> (sending feedback emails you submit, which include your user ID and email); and <strong>Apple</strong> (Sign in with Apple, if used).</li>
+        <li><strong>For legal/safety reasons</strong> when required by law or to protect the rights, safety, and integrity of users and the platform.</li>
+        <li><strong>In a business transfer</strong> (reorganization, merger, or asset transfer), subject to applicable law.</li>
+      </ol>
+      <p>We do <strong>not</strong> sell personal information and do <strong>not</strong> share personal information with third-party advertisers for cross-context behavioral advertising. We do not use third-party advertising or analytics SDKs in the app.</p>
+
+      <h2>8. Information Visible to Other Users</h2>
+      <p>The Service is built around showing your profile to potential roommates. Your photos, profile details, roommate-matching attributes, any sensitive attributes you add, and your approximate location/city are visible to other users in the swipe and match experience. Messages are visible to the user(s) you match and chat with. Photos are stored in cloud object storage and may be retrievable by direct URL. Please consider what you are comfortable sharing.</p>
+
+      <h2>9. Payments</h2>
+      <p>Paid subscriptions are processed by <strong>Stripe</strong>. When you subscribe, you provide your payment details directly to Stripe through its checkout, and Stripe processes your card/payment information under its own terms and privacy policy. We receive subscription status, billing dates, and limited payment metadata (such as invoice amounts and identifiers) to manage your subscription and entitlements — not your full card number.</p>
+
+      <h2>10. International Transfers</h2>
+      <p>Your information may be processed in countries other than your own (including the United States, where several of our providers operate). Where required, we use reasonable safeguards for cross-border transfers consistent with applicable privacy laws.</p>
+
+      <h2>11. Retention and Deletion</h2>
+      <ol>
+        <li><strong>Account deletion.</strong> You can delete your account from within the app. Deletion removes your profile, photos, preferences, prompts, swipes, matches, and messages from active systems.</li>
+        <li><strong>Backups.</strong> Residual copies may persist in encrypted backups for a limited period before being overwritten.</li>
+        <li><strong>Safety and legal records.</strong> We may retain certain records — such as reports and payment/tax records — for longer to keep the community safe, resolve disputes, or comply with legal, accounting, and tax obligations.</li>
+      </ol>
+      <p>Retention may otherwise vary by data type, legal requirements, backup cycles, and operational needs.</p>
+
+      <h2>12. Security</h2>
+      <p>We implement reasonable administrative, technical, and organizational measures, including authentication controls, row-level access controls in the database, and storage access policies. Payment-card data is handled by Stripe under PCI-DSS. No method of transmission or storage is completely secure.</p>
+
+      <h2>13. Your Privacy Rights</h2>
+      <p>Depending on your location (including Canada, EEA/UK, and certain U.S. states), you may have rights to:</p>
+      <ol>
+        <li>Access personal information.</li>
+        <li>Correct inaccurate information.</li>
+        <li>Delete information (subject to legal/operational exceptions).</li>
+        <li>Receive a portable copy of information.</li>
+        <li>Restrict or object to certain processing.</li>
+        <li>Withdraw consent where processing is consent-based.</li>
+        <li>Appeal a rights decision where local law provides that right.</li>
+      </ol>
+      <p>You can exercise many of these rights directly in the app by editing your profile or deleting your account. For other requests, contact <strong>service@roommatesplus.ca</strong>. We may need to verify your identity before fulfilling requests.</p>
+
+      <h2>14. U.S. State Privacy Disclosures</h2>
+      <p>For residents of applicable U.S. states, we process the personal information categories listed in Section 2 for the business purposes in Section 4, and disclose information as described in Section 7. We do not sell personal information or share it for cross-context behavioral advertising. You may exercise applicable rights by contacting <strong>service@roommatesplus.ca</strong>.</p>
+
+      <h2>15. Children</h2>
+      <p>The Service is intended for users <strong>18+</strong> and is not directed to children. We do not knowingly collect personal information from anyone under 18.</p>
+
+      <h2>16. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Updates become effective when posted (or as otherwise required by law). Continued use of the Service after updates means you accept the updated policy.</p>
+
+      <h2>17. Contact</h2>
+      <p>Privacy questions or requests: <strong>service@roommatesplus.ca</strong></p>
+    </article>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-nav-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">roommates<span style="color:var(--primary)">+</span></div>
+          <p>The most innovative social media platform for house hunting — and the most effective marketplace for property owners.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul><li><a href="/">Home</a></li><li><a href="/features.html">Features</a></li><li><a href="/about.html">About Us</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Owners</h4>
+          <ul><li><a href="/partner.html">Partner With Us</a></li><li><a href="/contact.html">Book a Demo</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul><li><a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a></li><li><a href="/contact.html">Contact Us</a></li></ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-and-conditions.html">Terms and Conditions</a><a href="/contact.html">Contact</a></div>
+        <div class="footer-copy">&copy; 2026 roommates+ — A S4S Product. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); } });
+  </script>
+</body>
+</html>

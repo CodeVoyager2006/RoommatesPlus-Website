@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="rmCoral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EC8071"></stop>
+      <stop offset="1" stop-color="#D1524C"></stop>
+    </linearGradient>
+    <mask id="rmHouse">
+      <rect width="120" height="120" fill="black"></rect>
+      <path d="M60 26 L91 53 L91 89 Q91 92 88 92 L32 92 Q29 92 29 89 L29 53 Z" fill="white"></path>
+      <path d="M60 82 C 51 74, 44 69, 44 62 C 44 58, 47 55, 51 55 C 54 55, 57 57, 60 60 C 63 57, 66 55, 69 55 C 73 55, 76 58, 76 62 C 76 69, 69 74, 60 82 Z" fill="black"></path>
+    </mask>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#rmCoral)"></rect>
+  <rect width="120" height="120" rx="28" fill="white" mask="url(#rmHouse)"></rect>
+</svg>

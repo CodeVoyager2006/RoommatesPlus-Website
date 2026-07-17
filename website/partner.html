@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner With Us — roommates+</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    .partner-hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 160px 24px 96px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .partner-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(226,26,47,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .partner-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      margin-bottom: 28px;
+      max-width: 900px;
+    }
+    .partner-hero p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      font-weight: 600;
+      line-height: 1.65;
+    }
+    .big-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .big-stat-cell {
+      background: var(--surface);
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .big-stat-num {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.04em;
+    }
+    .big-stat-label {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .vision-block {
+      background: var(--text);
+      border-radius: 32px;
+      padding: 72px 64px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .vision-block::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(226,26,47,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .vision-block h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .vision-block p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+      max-width: 600px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .vision-checklist {
+      list-style: none;
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 32px;
+      position: relative;
+    }
+    .vision-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .vision-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    @media (max-width: 900px) {
+      .big-stat-grid { grid-template-columns: 1fr; }
+      .vision-checklist { grid-template-columns: 1fr; }
+      .vision-block { padding: 48px 32px; }
+    }
+    @media (max-width: 640px) {
+      .partner-hero { min-height: 60vh; padding: 130px 24px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo" style="text-decoration:none;">roommates<span style="color:var(--primary)">+</span></a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/features.html" class="nav-link">Features</a>
+      <a href="/contact.html" class="nav-link">Contact</a>
+      <a href="/partner.html" class="nav-link active">Partner With Us</a>
+    </div>
+    <a href="/contact.html" class="nav-cta">Book a Demo</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about.html" class="mobile-nav-link">About</a>
+    <a href="/features.html" class="mobile-nav-link">Features</a>
+    <a href="/contact.html" class="mobile-nav-link">Contact</a>
+    <a href="/partner.html" class="mobile-nav-link active">Partner With Us</a>
+    <a href="/contact.html" class="mobile-nav-cta">Book a Demo</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="partner-hero">
+    <div class="partner-hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      For Property Owners
+    </div>
+    <h1>The future of<br /><span class="highlight">property marketing.</span></h1>
+    <p>Stop paying premium prices for clicks from people who aren't looking to rent. roommates+ puts your listing in front of a motivated, high-intent audience of active seekers — at half the cost.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <a href="/contact.html" class="btn-primary">Book a Free Demo</a>
+      <a href="#compare" class="btn-secondary">See the Comparison</a>
+    </div>
+  </div>
+
+  <!-- BIG STATS -->
+  <section style="padding:0 24px 96px;">
+    <div class="container">
+      <div class="big-stat-grid reveal">
+        <div class="big-stat-cell">
+          <div class="big-stat-num">50%</div>
+          <div class="big-stat-label">Lower listing &amp; marketing fees than Instagram, Facebook &amp; YouTube</div>
+        </div>
+        <div class="big-stat-cell">
+          <div class="big-stat-num">10K+</div>
+          <div class="big-stat-label">Active seekers already on the platform</div>
+        </div>
+        <div class="big-stat-cell">
+          <div class="big-stat-num">4.8★</div>
+          <div class="big-stat-label">Average owner rating — landlords love it</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION BLOCK -->
+  <section style="padding:0 24px 96px;">
+    <div class="container">
+      <div class="vision-block reveal">
+        <div class="section-label" style="color:rgba(255,255,255,0.5);margin-bottom:16px;">The Grand Vision</div>
+        <h2>This isn't just a listing app.<br />It's the operating system for modern rental.</h2>
+        <p>We're building the platform where every rental relationship begins — and where it's maintained. Property owners don't just list here. They manage here, communicate here, grow here.</p>
+        <ul class="vision-checklist">
+          <li><div class="vision-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>One app to list, manage, and market all units</li>
+          <li><div class="vision-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>High-intent seekers who are actively searching</li>
+          <li><div class="vision-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Centralized application management</li>
+          <li><div class="vision-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Context-smart chat — no more "which unit?" confusion</li>
+          <li><div class="vision-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>24/7 AI agent for property management questions</li>
+          <li><div class="vision-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Roommate matching drives higher conversion to lease</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- OWNER VALUE PROPS -->
+  <section style="background:var(--surface);padding:96px 24px;">
+    <div class="container">
+      <div class="section-label" style="text-align:center;">Why Owners Choose Us</div>
+      <div class="section-title" style="text-align:center;">Five reasons we're<br />in a class of our own.</div>
+
+      <div class="owner-value-grid">
+        <div class="owner-value-card reveal">
+          <div class="owner-value-num">01</div>
+          <h4>Cheap Listing &amp; Marketing</h4>
+          <p>We charge 50% less than popular social media advertising channels. Same reach, half the price. Your ROI is higher from day one.</p>
+        </div>
+        <div class="owner-value-card reveal">
+          <div class="owner-value-num">02</div>
+          <h4>Convenient Unit Management</h4>
+          <p>List, edit, and manage your entire portfolio from one dashboard. No spreadsheets. No switching apps. One clean view of everything.</p>
+        </div>
+        <div class="owner-value-card reveal">
+          <div class="owner-value-num">03</div>
+          <h4>Large Seeker Audience</h4>
+          <p>roommates+ is built for seekers — meaning your listing lands in front of people actively looking, not casual browsers scrolling their feed.</p>
+        </div>
+        <div class="owner-value-card reveal">
+          <div class="owner-value-num">04</div>
+          <h4>High Conversion Rate</h4>
+          <p>Our roommate matching feature makes seekers more committed — they've already found a co-tenant, making them far more likely to sign.</p>
+        </div>
+        <div class="owner-value-card reveal">
+          <div class="owner-value-num">05</div>
+          <h4>24/7 AI Real Estate Agent</h4>
+          <p>Get instant answers to property management questions any time of day. Your AI assistant is always on, always ready, always accurate.</p>
+        </div>
+        <div class="owner-value-card reveal" style="background:var(--gradient);border-color:transparent;color:#fff;">
+          <div class="owner-value-num" style="background:linear-gradient(135deg,rgba(255,255,255,0.9),rgba(255,255,255,0.6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">→</div>
+          <h4 style="color:#fff;">Ready to get started?</h4>
+          <p style="color:rgba(255,255,255,0.85);">Book a free 30-minute demo and we'll walk you through everything — live, with your questions answered in real time.</p>
+          <a href="/contact.html" class="btn-outline-white" style="margin-top:20px;display:inline-block;">Book a Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="comparison-section" id="compare" style="padding:96px 24px;">
+    <div class="container">
+      <div class="section-label" style="text-align:center;">Head-to-Head</div>
+      <div class="section-title" style="text-align:center;">How we compare to<br />existing platforms.</div>
+      <p class="section-sub" style="text-align:center;margin:0 auto;">The current rental marketplace is fragmented, expensive, and designed for engagement — not conversion. We fix all three.</p>
+
+      <div style="overflow-x:auto;margin-top:56px;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width:36%;">Feature</th>
+              <th class="col-them">Airbnb / Zillow / rentals.ca</th>
+              <th class="col-us">roommates+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Swipe-based discovery</td>
+              <td class="col-them">
+                <span class="cross-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              </td>
+              <td class="col-us">
+                <span class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Built-in roommate matching</td>
+              <td class="col-them">
+                <span class="cross-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              </td>
+              <td class="col-us">
+                <span class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Real-time in-app chat with seekers</td>
+              <td class="col-them">Limited / email-based</td>
+              <td class="col-us">Full real-time chat</td>
+            </tr>
+            <tr>
+              <td>Chat shows which unit is being discussed</td>
+              <td class="col-them">
+                <span class="cross-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              </td>
+              <td class="col-us">
+                <span class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Centralized unit management dashboard</td>
+              <td class="col-them">Fragmented per listing</td>
+              <td class="col-us">All units in one view</td>
+            </tr>
+            <tr>
+              <td>In-app application tracking</td>
+              <td class="col-them">External / email</td>
+              <td class="col-us">Built-in, real-time</td>
+            </tr>
+            <tr>
+              <td>Marketing cost vs. social media ads</td>
+              <td class="col-them">Full price or premium</td>
+              <td class="col-us" style="font-weight:800;">50% cheaper</td>
+            </tr>
+            <tr>
+              <td>Audience intent</td>
+              <td class="col-them">Mixed (vacations + long-term)</td>
+              <td class="col-us">100% rental seekers</td>
+            </tr>
+            <tr>
+              <td>24/7 AI real estate agent</td>
+              <td class="col-them">
+                <span class="cross-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              </td>
+              <td class="col-us">
+                <span class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Seeker-to-lease conversion support</td>
+              <td class="col-them">Browse only</td>
+              <td class="col-us">Match + chat + apply</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section style="background:var(--bg);padding:96px 24px;">
+    <div class="container" style="max-width:800px;text-align:center;">
+      <div class="section-label" style="text-align:center;">Owner Voice</div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:56px 48px;margin-top:40px;" class="reveal">
+        <div class="stars" style="justify-content:center;margin-bottom:24px;">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote style="font-family:'Fraunces',serif;font-size:clamp(1.2rem,2.5vw,1.75rem);font-weight:900;letter-spacing:-0.02em;line-height:1.4;color:var(--text);font-style:normal;margin-bottom:28px;">"Listed my unit in 20 minutes. Had 5 qualified applications by the next morning. The chat system is brilliant — I always know exactly which unit a tenant is asking about. This is what the industry needed."</blockquote>
+        <div class="testimonial-author" style="justify-content:center;">
+          <div class="avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7);width:52px;height:52px;font-size:1rem;">MT</div>
+          <div style="text-align:left;">
+            <div class="testimonial-name" style="font-size:1rem;">Marcus T.</div>
+            <div class="testimonial-role">Landlord — 3 units listed on roommates+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER CTA -->
+  <section class="partner-cta-section">
+    <div class="container">
+      <div class="section-label" style="color:rgba(255,255,255,0.5);text-align:center;margin-bottom:24px;">Ready to Partner?</div>
+      <h2>Your next tenant is<br />already swiping.</h2>
+      <p>Join the platform where high-intent seekers go to find their next home. Your listing is one step away from being their next swipe right.</p>
+      <div class="partner-cta-actions">
+        <a href="/contact.html" class="btn-primary" style="background:#fff;color:var(--primary);">Book a Free Demo</a>
+        <a href="mailto:service@roommatesplus.ca" class="btn-ghost">Email Us Directly</a>
+      </div>
+
+      <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:48px;">
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          No commitment required
+        </div>
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          30-min demo call
+        </div>
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l3.22 6.52L22 8.69l-5 4.87 1.18 6.88L12 17.27l-6.18 3.17L7 14.56 2 9.69l6.78-1.17L12 2z"/></svg>
+          50% cheaper than ads
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-nav-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">roommates<span style="color:var(--primary)">+</span></div>
+          <p>The most innovative social media platform for house hunting — and the most effective marketplace for property owners.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul><li><a href="/">Home</a></li><li><a href="/features.html">Features</a></li><li><a href="/about.html">About Us</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Owners</h4>
+          <ul><li><a href="/partner.html">Partner With Us</a></li><li><a href="/contact.html">Book a Demo</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul><li><a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a></li><li><a href="/contact.html">Contact Us</a></li></ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-and-conditions.html">Terms and Conditions</a><a href="/contact.html">Contact</a></div>
+        <div class="footer-copy">&copy; 2026 roommates+ — A S4S Product. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); } });
+    const revealObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

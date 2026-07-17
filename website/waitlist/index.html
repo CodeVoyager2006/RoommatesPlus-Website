@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>roommates+ — Coming Soon</title>
+  <link rel="icon" type="image/png" href="../assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:        #E21A2F;
+      --primary-pressed:#C41528;
+      --accent:         #FC7C19;
+      --bg:             #FEFBFB;
+      --surface:        #FFFFFF;
+      --text:           #1C0A0A;
+      --text-muted:     #7A5C5C;
+      --border:         #F1DEDB;
+      --peach:          #FEE0DD;
+      --gradient:       linear-gradient(135deg, #FC7C19 0%, #E21A2F 100%);
+      --gradient-soft:  linear-gradient(135deg, rgba(252,124,25,0.09) 0%, rgba(226,26,47,0.09) 100%);
+      --shadow-sm:      0 2px 8px rgba(226,26,47,0.07);
+      --shadow-md:      0 8px 32px rgba(226,26,47,0.13);
+      --shadow-lg:      0 24px 64px rgba(226,26,47,0.18);
+      --shadow-cta:     0 6px 18px rgba(226,26,47,0.38);
+      --radius:         20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      min-height: 100vh; /* fallback */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 56px 24px 88px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background color blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .blob-red {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(226,26,47,0.10) 0%, transparent 65%);
+      top: -20%; left: -12%;
+    }
+    .blob-orange {
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(252,124,25,0.08) 0%, transparent 65%);
+      bottom: -15%; right: -8%;
+    }
+    .blob-peach-a {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(254,224,221,0.55) 0%, transparent 65%);
+      top: 18%; right: -6%;
+    }
+    .blob-peach-b {
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(253,220,204,0.45) 0%, transparent 65%);
+      bottom: 18%; left: -5%;
+    }
+
+    /* ── Brand wordmark ── */
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-brand-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(226,26,47,0.18);
+    }
+    .hero-brand-name {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .hero-brand-name .plus { color: var(--primary); }
+
+    /* ── Coming soon pill ── */
+    .coming-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient-soft);
+      border: 1px solid rgba(226,26,47,0.22);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 28px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .pill-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gradient);
+      flex-shrink: 0;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.35); }
+    }
+
+    /* ── Headline ── */
+    .hero-h1 {
+      font-size: clamp(2.6rem, 7vw, 5.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 22px;
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-h1 .highlight {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Description ── */
+    .hero-desc {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 500px;
+      font-weight: 600;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Email form ── */
+    .form-wrap {
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      z-index: 1;
+    }
+    .email-row {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+      margin-bottom: 12px;
+    }
+    .email-input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.975rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--surface);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-width: 0;
+    }
+    .email-input::placeholder { color: var(--text-muted); opacity: 0.8; }
+    .email-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(226,26,47,0.09);
+    }
+    .email-input.error { border-color: var(--primary); }
+
+    .submit-btn {
+      background: var(--gradient);
+      color: #fff;
+      border: none;
+      padding: 16px 28px;
+      border-radius: 100px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: var(--shadow-cta);
+      transition: transform 0.15s, box-shadow 0.15s;
+      flex-shrink: 0;
+    }
+    .submit-btn:hover  { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(226,26,47,0.42); }
+    .submit-btn:active { transform: translateY(0); box-shadow: var(--shadow-cta); }
+
+    .form-disclaimer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ── Success message ── */
+    .success-msg {
+      display: none;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(22,163,74,0.06));
+      border: 1.5px solid rgba(34,197,94,0.28);
+      border-radius: 16px;
+      padding: 18px 22px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #166534;
+      text-align: left;
+      width: 100%;
+    }
+    .success-msg.show { display: flex; }
+    .success-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .success-text { line-height: 1.5; }
+    .success-text strong { display: block; margin-bottom: 2px; }
+    .success-text span { font-size: 0.875rem; font-weight: 600; color: #15803d; }
+
+    /* ── Scroll indicator ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      animation: bob 2.8s ease-in-out infinite;
+      z-index: 1;
+      opacity: 0.7;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      55%       { transform: translateX(-50%) translateY(9px); }
+    }
+
+    /* ─── AUDIENCE SECTION ──────────────────────────────── */
+    .audience-section {
+      padding: 88px 24px 0;
+    }
+    .container { max-width: 1040px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      margin-bottom: 48px;
+    }
+    .audience-intro { text-align: center; }
+
+    /* ── The two selector cards ── */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 72px;
+    }
+
+    .aud-card {
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      cursor: pointer;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      position: relative;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .aud-card:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+    /* Active seeker card */
+    .aud-card[data-aud="seeker"].is-active {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+    /* Active owner card */
+    .aud-card[data-aud="owner"].is-active {
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(252,124,25,0.15);
+    }
+    /* Inactive */
+    .aud-card.is-inactive {
+      opacity: 0.65;
+      box-shadow: none;
+    }
+    .aud-card.is-inactive:hover { opacity: 0.88; border-color: rgba(226,26,47,0.25); }
+
+    /* Active badge */
+    .aud-badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .aud-card[data-aud="seeker"] .aud-badge {
+      background: var(--gradient);
+      color: #fff;
+    }
+    .aud-card[data-aud="owner"] .aud-badge {
+      background: linear-gradient(135deg, #FC7C19, #E85D04);
+      color: #fff;
+    }
+    .aud-card.is-inactive .aud-badge { display: none; }
+
+    /* Card icon */
+    .aud-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .aud-card[data-aud="seeker"] .aud-icon {
+      background: var(--gradient-soft);
+      border: 1px solid rgba(226,26,47,0.14);
+    }
+    .aud-card[data-aud="owner"] .aud-icon {
+      background: linear-gradient(135deg, rgba(252,124,25,0.10), rgba(226,26,47,0.07));
+      border: 1px solid rgba(252,124,25,0.20);
+    }
+
+    .aud-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .aud-card[data-aud="seeker"] .aud-eyebrow { color: var(--primary); }
+    .aud-card[data-aud="owner"]  .aud-eyebrow { color: var(--accent); }
+
+    .aud-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .aud-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 600;
+    }
+    .switch-cue {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 16px;
+      transition: color 0.15s;
+    }
+    .aud-card:hover .switch-cue { color: var(--primary); }
+    .aud-card[data-aud="owner"]:hover .switch-cue { color: var(--accent); }
+
+    /* ─── FEATURES SECTION ──────────────────────────────── */
+    .features-section { padding: 0 24px 100px; }
+
+    .features-panel { display: none; }
+    .features-panel.is-active { display: block; }
+
+    .panel-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .panel-header h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      margin-bottom: 12px;
+    }
+    .panel-header p {
+      color: var(--text-muted);
+      font-size: 0.975rem;
+      font-weight: 600;
+      max-width: 460px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .feat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .feat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .feat-card.seeker-card:hover { border-color: rgba(226,26,47,0.20); }
+    .feat-card.owner-card:hover  { border-color: rgba(252,124,25,0.22); }
+
+    .feat-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .feat-tag.seeker-tag {
+      background: var(--gradient-soft);
+      color: var(--primary);
+      border: 1px solid rgba(226,26,47,0.13);
+    }
+
+    .feat-icon {
+      width: 48px; height: 48px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .feat-icon.s { background: var(--gradient-soft); border: 1px solid rgba(226,26,47,0.12); }
+    .feat-icon.o {
+      background: linear-gradient(135deg, rgba(252,124,25,0.10), rgba(226,26,47,0.07));
+      border: 1px solid rgba(252,124,25,0.18);
+    }
+
+    .feat-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .feat-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer {
+      background: var(--text);
+      color: #fff;
+      padding: 60px 24px 36px;
+    }
+    .footer-inner { max-width: 1040px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .footer-wordmark {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .footer-wordmark .plus { color: var(--primary); }
+    .footer-tagline {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.65;
+      max-width: 260px;
+    }
+
+    .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col h5 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.58);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: #fff; }
+
+    .footer-hr {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 24px;
+    }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      color: rgba(255,255,255,0.28);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .footer-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.48);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 700;
+      transition: color 0.15s;
+    }
+    .footer-back:hover { color: #fff; }
+
+    /* ─── SCROLL REVEAL ─────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .audience-grid { grid-template-columns: 1fr 1fr; }
+      .feat-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { gap: 32px; }
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 20px 80px; }
+
+      .hero-brand-icon { width: 44px; height: 44px; border-radius: 11px; }
+      .hero-brand-name { font-size: 1.6rem; }
+
+      .email-row { flex-direction: column; gap: 10px; }
+      .email-input { border-radius: 14px; text-align: center; }
+      .submit-btn  { border-radius: 14px; padding: 16px; width: 100%; }
+
+      .audience-section { padding: 72px 20px 0; }
+      .audience-grid { grid-template-columns: 1fr; gap: 14px; }
+
+      /* On mobile: active card on top — handled by JS */
+
+      .aud-badge { top: 12px; right: 12px; }
+      .aud-card { padding: 24px 20px; }
+
+      .features-section { padding: 0 20px 80px; }
+      .feat-grid { grid-template-columns: 1fr; }
+      .feat-card { padding: 24px 20px; }
+
+      .footer-top { flex-direction: column; gap: 28px; }
+      .footer-cols { gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+
+    /* Very small screens */
+    @media (max-width: 380px) {
+      .hero-h1 { font-size: 2.2rem; }
+      .hero-brand-name { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+    <!-- Background blobs -->
+    <div class="blob blob-red"></div>
+    <div class="blob blob-orange"></div>
+    <div class="blob blob-peach-a"></div>
+    <div class="blob blob-peach-b"></div>
+
+    <!-- Brand wordmark -->
+    <div class="hero-brand">
+      <img src="../assets/icon.png" alt="roommates+ app icon" class="hero-brand-icon" />
+      <span class="hero-brand-name">roommates<span class="plus">+</span></span>
+    </div>
+
+    <!-- Coming soon pill -->
+    <div class="coming-pill">
+      <div class="pill-dot"></div>
+      Coming Soon
+    </div>
+
+    <!-- Headline -->
+    <h1 class="hero-h1">
+      Find your place.<br />
+      <span class="highlight">Find your people.</span>
+    </h1>
+
+    <!-- Description -->
+    <p class="hero-desc">
+      Stop scrolling through Facebook groups. Swipe listings, match with roommates, and connect with landlords — all in one app.
+    </p>
+
+    <!-- Email form -->
+    <div class="form-wrap">
+      <form class="email-row" id="emailForm" novalidate>
+        <input
+          type="email"
+          class="email-input"
+          id="emailInput"
+          placeholder="Enter your email address"
+          autocomplete="email"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit" class="submit-btn">Notify Me</button>
+      </form>
+      <p class="form-disclaimer">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        We respect your inbox. No spam, just product updates.
+      </p>
+
+      <!-- Success state (replaces form on submit) -->
+      <div class="success-msg" id="successMsg" role="status" aria-live="polite">
+        <div class="success-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="success-text">
+          <strong>You're on the list!</strong>
+          <span>We'll notify you as soon as roommates<span style="color:var(--primary)">+</span> is ready.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Explore</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- ─── AUDIENCE SELECTOR ─────────────────────────────── -->
+  <section class="audience-section">
+    <div class="container">
+      <div class="audience-intro reveal">
+        <div class="section-eyebrow">Who Is This For</div>
+        <div class="section-title">Two audiences.<br />One platform.</div>
+      </div>
+
+      <div class="audience-grid reveal" id="audienceGrid">
+
+        <!-- Seeker card (active by default) -->
+        <div class="aud-card is-active"
+             data-aud="seeker"
+             id="seekerCard"
+             role="button"
+             tabindex="0"
+             aria-pressed="true"
+             aria-controls="seekerPanel">
+          <span class="aud-badge">Viewing</span>
+          <div class="aud-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E21A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="aud-eyebrow">For Rental Seekers</div>
+          <h3>Swipe. Match.<br />Move in together.</h3>
+          <p>Find your next home and your perfect roommate — in one place.</p>
+        </div>
+
+        <!-- Owner card (inactive by default) -->
+        <div class="aud-card is-inactive"
+             data-aud="owner"
+             id="ownerCard"
+             role="button"
+             tabindex="0"
+             aria-pressed="false"
+             aria-controls="ownerPanel">
+          <span class="aud-badge">Viewing</span>
+          <div class="aud-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FC7C19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="aud-eyebrow">For Property Owners</div>
+          <h3>List. Manage.<br />Fill units faster.</h3>
+          <p>Reach active renters at half the cost of social media ads.</p>
+          <div class="switch-cue">
+            Switch to owner view
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─────────────────────────────────────── -->
+  <section class="features-section">
+    <div class="container">
+
+      <!-- SEEKER PANEL -->
+      <div class="features-panel is-active" id="seekerPanel" role="region" aria-label="Seeker features">
+        <div class="panel-header reveal">
+          <div class="section-eyebrow">Seeker Features</div>
+          <h2>Everything you need<br />to find your next home.</h2>
+          <p>Built to make renting faster, smarter, and less stressful than every other platform out there.</p>
+        </div>
+        <div class="feat-grid">
+
+          <div class="feat-card seeker-card reveal">
+            <div class="feat-tag seeker-tag">Only on roommates+</div>
+            <div class="feat-icon s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E21A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Roommate Matching</h4>
+            <p>See who else liked the same listing as you. Browse their profiles and plan a shared move-in — all before signing anything.</p>
+          </div>
+
+          <div class="feat-card seeker-card reveal">
+            <div class="feat-icon s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E21A2F" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h4>Swipe to Discover</h4>
+            <p>Photo carousel, price, unit type, amenities — everything in a single glance. Swipe right to save, left to skip. It's that fast.</p>
+          </div>
+
+          <div class="feat-card seeker-card reveal">
+            <div class="feat-icon s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E21A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h4>Real-Time Chat</h4>
+            <p>Message landlords instantly. No more waiting days for an email. Every conversation shows which unit you're asking about — automatically.</p>
+          </div>
+
+          <div class="feat-card seeker-card reveal">
+            <div class="feat-icon s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E21A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h4>Apply In-App</h4>
+            <p>One-tap applications with real-time status tracking. Know exactly where you stand — Pending, Approved, or Declined — no guessing.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- OWNER PANEL -->
+      <div class="features-panel" id="ownerPanel" role="region" aria-label="Owner features">
+        <div class="panel-header reveal">
+          <div class="section-eyebrow" style="color:var(--accent);">Owner Features</div>
+          <h2>The smarter way<br />to fill your units.</h2>
+          <p>List affordably, manage centrally, and connect with high-intent renters who are actively searching right now.</p>
+        </div>
+        <div class="feat-grid">
+
+          <div class="feat-card owner-card reveal">
+            <div class="feat-icon o">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FC7C19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h4>50% Cheaper Than Ads</h4>
+            <p>Reach the same audience as Instagram and Facebook ads at half the price. Every listing lands directly in front of active rental seekers — zero wasted spend.</p>
+          </div>
+
+          <div class="feat-card owner-card reveal">
+            <div class="feat-icon o">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FC7C19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h4>Centralized Dashboard</h4>
+            <p>Manage every property, listing, and application from one screen. Edit availability, pause listings, approve tenants — all in a single tap.</p>
+          </div>
+
+          <div class="feat-card owner-card reveal">
+            <div class="feat-icon o">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FC7C19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h4>Context-Smart Chat</h4>
+            <p>Every conversation automatically shows which unit is being discussed. No more "which property were you asking about?" — just clear, direct communication.</p>
+          </div>
+
+          <div class="feat-card owner-card reveal">
+            <div class="feat-icon o">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FC7C19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h4>24/7 AI Agent</h4>
+            <p>An always-on real estate assistant answers property management questions any time of day. No hold music. No wait. Just instant, accurate answers.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-wordmark">roommates<span class="plus">+</span></div>
+          <p class="footer-tagline">The most innovative social platform for house hunting — and the most effective marketplace for property owners.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a>
+            <a href="../contact.html">Get in Touch</a>
+          </div>
+          <div class="footer-col">
+            <h5>Platform</h5>
+            <a href="../index.html">Main Site</a>
+            <a href="../about.html">About Us</a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-hr" />
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 roommates+ — A S4S Product. All rights reserved.</div>
+        <a href="../index.html" class="footer-back">
+          Visit main site
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Email form ───────────────────────────────────────
+    const emailForm  = document.getElementById('emailForm');
+    const emailInput = document.getElementById('emailInput');
+    const successMsg = document.getElementById('successMsg');
+    const disclaimer = document.querySelector('.form-disclaimer');
+
+    emailForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const val = emailInput.value.trim();
+      const valid = val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      if (!valid) {
+        emailInput.classList.add('error');
+        emailInput.focus();
+        return;
+      }
+      // Hide form + disclaimer, show success
+      emailForm.style.display = 'none';
+      disclaimer.style.display = 'none';
+      successMsg.classList.add('show');
+    });
+
+    emailInput.addEventListener('input', function() {
+      emailInput.classList.remove('error');
+    });
+
+    // ── Audience toggle ──────────────────────────────────
+    const seekerCard  = document.getElementById('seekerCard');
+    const ownerCard   = document.getElementById('ownerCard');
+    const seekerPanel = document.getElementById('seekerPanel');
+    const ownerPanel  = document.getElementById('ownerPanel');
+
+    function activateSeeker() {
+      seekerCard.classList.replace('is-inactive', 'is-active');
+      ownerCard.classList.replace('is-active', 'is-inactive');
+      seekerCard.setAttribute('aria-pressed', 'true');
+      ownerCard.setAttribute('aria-pressed', 'false');
+      seekerPanel.classList.add('is-active');
+      ownerPanel.classList.remove('is-active');
+      // Re-observe seeker reveals
+      seekerPanel.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    }
+
+    function activateOwner() {
+      ownerCard.classList.replace('is-inactive', 'is-active');
+      seekerCard.classList.replace('is-active', 'is-inactive');
+      ownerCard.setAttribute('aria-pressed', 'true');
+      seekerCard.setAttribute('aria-pressed', 'false');
+      ownerPanel.classList.add('is-active');
+      seekerPanel.classList.remove('is-active');
+      // Re-observe owner reveals
+      ownerPanel.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+      // Smooth scroll to features on mobile if below fold
+      if (window.innerWidth <= 640) {
+        ownerPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    seekerCard.addEventListener('click', activateSeeker);
+    ownerCard.addEventListener('click', activateOwner);
+
+    // Keyboard support
+    [seekerCard, ownerCard].forEach(card => {
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card === seekerCard ? activateSeeker() : activateOwner();
+        }
+      });
+    });
+
+    // ── Scroll reveal ────────────────────────────────────
+    const revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      revealObs.observe(el);
+    });
+
+    // ── Hide scroll hint on first scroll ────────────────
+    const scrollHint = document.querySelector('.scroll-hint');
+    if (scrollHint) {
+      window.addEventListener('scroll', function onScroll() {
+        scrollHint.style.opacity = '0';
+        scrollHint.style.transition = 'opacity 0.4s ease';
+        window.removeEventListener('scroll', onScroll);
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>

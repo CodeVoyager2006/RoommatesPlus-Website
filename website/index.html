@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>roommates+ — Find Your Place. Find Your People.</title>
+  <meta name="description" content="roommates+ is the swipe-based roommate app for students. Match with people who want the same place as you, chat in real time, and move in with someone you actually vibe with." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="/" class="brand">roommates<span class="brand-plus">+</span></a>
+      <nav class="nav-menu" aria-label="Main">
+        <a href="/" class="nav-item active">Home</a>
+        <a href="/features.html" class="nav-item">Features</a>
+        <a href="/about.html" class="nav-item">About</a>
+        <a href="/blog.html" class="nav-item">Blog</a>
+        <a href="/contact.html" class="nav-item">Contact</a>
+      </nav>
+      <a href="#download" class="btn btn-coral nav-get">Get the App</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/" class="active">Home</a>
+    <a href="/features.html">Features</a>
+    <a href="/about.html">About</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a href="#download" class="btn btn-coral">Get the App</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob blob-peach" style="width:520px;height:520px;top:-140px;left:-160px;"></div>
+    <div class="blob blob-sky" style="width:460px;height:460px;top:30%;right:-180px;animation-delay:3s;"></div>
+    <div class="blob blob-lilac" style="width:380px;height:380px;bottom:-120px;left:32%;animation-delay:6s;"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow" data-reveal>🏠 The #1 roommate app for students</span>
+        <h1 class="display" data-reveal style="--d:.08s">Find your place.<br /><span class="grad-text">Find your people.</span></h1>
+        <p class="lead" data-reveal style="--d:.16s">Swipe through roommates who match your budget, your habits, and your vibe — and meet the people who want the same place as you. No more sketchy Facebook groups.</p>
+        <div class="hero-ctas" data-reveal style="--d:.24s">
+          <a href="#download" class="btn btn-coral btn-lg">Get the App Free</a>
+          <a href="#how" class="btn btn-soft btn-lg">See how it works</a>
+        </div>
+        <div class="social-proof" data-reveal style="--d:.32s">
+          <div class="avatar-stack">
+            <span class="av av-peach">🧑‍🎓</span>
+            <span class="av av-sky">👩‍🎓</span>
+            <span class="av av-mint">🧑‍💻</span>
+            <span class="av av-lilac">👩‍🔬</span>
+            <span class="av av-coral">12K+</span>
+          </div>
+          <p>Loved by <strong>12,000+ students</strong><br />across 30+ campuses</p>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal="scale" style="--d:.2s">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-top">
+              <span class="brand">roommates<span class="brand-plus">+</span></span>
+              <div class="ph-icons"><span>⚙️</span><span>🔔</span></div>
+            </div>
+            <div class="phone-stack">
+              <article class="swipe-card" data-pos="0">
+                <div class="like-stamp">LIKE</div>
+                <div class="sc-photo av-peach">🧑‍🎓</div>
+                <div class="sc-meta">
+                  <h4>Maya, 21</h4>
+                  <p>2nd-year psych · 1.2 km from campus</p>
+                  <div class="sc-chips"><span>🌙 Night owl</span><span>🧼 Tidy</span><span>🐱 Cat-friendly</span></div>
+                </div>
+              </article>
+              <article class="swipe-card" data-pos="1">
+                <div class="like-stamp">LIKE</div>
+                <div class="sc-photo av-sky">🧑‍💻</div>
+                <div class="sc-meta">
+                  <h4>Dev, 23</h4>
+                  <p>CS grad student · budget $800–950</p>
+                  <div class="sc-chips"><span>☕ Early bird</span><span>🎮 Gamer</span><span>🤫 Quiet</span></div>
+                </div>
+              </article>
+              <article class="swipe-card" data-pos="2">
+                <div class="like-stamp">LIKE</div>
+                <div class="sc-photo av-mint">👩‍🎨</div>
+                <div class="sc-meta">
+                  <h4>Sofia, 22</h4>
+                  <p>Fine arts · moving in September</p>
+                  <div class="sc-chips"><span>🌿 Plant mom</span><span>🍳 Cooks</span><span>🚭 Non-smoker</span></div>
+                </div>
+              </article>
+            </div>
+            <div class="phone-tabbar">
+              <span class="on">🔥</span><span>💌</span><span>💬</span><span>👤</span>
+            </div>
+          </div>
+        </div>
+        <div class="float-badge fb-1">💖 It's a match!</div>
+        <div class="float-badge fb-2">💬 New message<small>"When can you move in?"</small></div>
+        <div class="float-badge fb-3">✓ Verified profiles</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>SWIPE <i class="star">✦</i> MATCH <i class="star">✦</i> MOVE IN <i class="star">✦</i> NO MORE FACEBOOK GROUPS <i class="star">✦</i> FIND YOUR PEOPLE <i class="star">✦</i></span>
+      <span>SWIPE <i class="star">✦</i> MATCH <i class="star">✦</i> MOVE IN <i class="star">✦</i> NO MORE FACEBOOK GROUPS <i class="star">✦</i> FIND YOUR PEOPLE <i class="star">✦</i></span>
+    </div>
+  </div>
+
+  <!-- FEATURES GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Why roommates+</span>
+        <h2 class="headline" data-reveal style="--d:.08s">Everything you need to <span class="grad-text">not hate</span> where you live</h2>
+        <p class="lead" data-reveal style="--d:.16s">Finding a roommate shouldn't feel like a background check you run alone at 2am. We built the whole pipeline — discover, vet, chat, move in.</p>
+      </div>
+      <div class="cards-3">
+        <article class="card" data-reveal>
+          <div class="icon-tile av-peach">🔥</div>
+          <h3>Swipe-based discovery</h3>
+          <p>A feed of real people looking for a place near you. Swipe right on the vibe, left on the chaos. It takes seconds, not weeks.</p>
+        </article>
+        <article class="card" data-reveal style="--d:.1s">
+          <div class="icon-tile av-sky">💌</div>
+          <h3>See who liked you</h3>
+          <p>The Likes tab shows everyone who already swiped right on you — so you can skip the guessing and match instantly.</p>
+        </article>
+        <article class="card" data-reveal style="--d:.2s">
+          <div class="icon-tile av-mint">💬</div>
+          <h3>Real-time chat</h3>
+          <p>Match and start talking immediately. Plan viewings, compare schedules, and figure out who owns the air fryer.</p>
+        </article>
+        <article class="card" data-reveal>
+          <div class="icon-tile av-lilac">🎚️</div>
+          <h3>Advanced filters</h3>
+          <p>Filter by budget, move-in date, lifestyle, pets, allergies, languages, hobbies and more — down to night-owl vs early-bird.</p>
+        </article>
+        <article class="card" data-reveal style="--d:.1s">
+          <div class="icon-tile av-peach">🛡️</div>
+          <h3>Verified &amp; checked</h3>
+          <p>Verified profiles plus on-demand background checks, because "trust me bro" is not a screening process.</p>
+        </article>
+        <article class="card" data-reveal style="--d:.2s">
+          <div class="icon-tile av-sky">🤖</div>
+          <h3>AI roommate matching</h3>
+          <p>Our AI reads between the chips — habits, schedules, dealbreakers — and surfaces the people you'll actually get along with.</p>
+        </article>
+        <article class="card card-wide" data-reveal="scale">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,0.18);color:#fff;">⭐ The roommates+ difference</span>
+            <h3 style="margin-top:18px;">Meet roommates who want the same place as you</h3>
+            <p>Found a unit you love? See everyone else who's interested in it — and team up before anyone signs. Stop finding apartments without people, or people without apartments.</p>
+          </div>
+          <div class="cw-art">
+            <div style="margin-bottom:6px;">🏠 2BR on College St. — 4 people interested</div>
+            <div class="cw-row"><span class="av av-peach">🧑‍🎓</span><div>Maya <small>Also eyeing this unit</small></div></div>
+            <div class="cw-row"><span class="av av-mint">🧑‍💻</span><div>Dev <small>Budget matches yours</small></div></div>
+            <div class="cw-row"><span class="av av-lilac">👩‍🎨</span><div>Sofia <small>Same move-in month</small></div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>How it works</span>
+        <h2 class="headline" data-reveal style="--d:.08s">Three steps. Zero awkward DMs.</h2>
+      </div>
+      <div class="steps">
+        <div class="step-row" data-reveal="left">
+          <div class="step-num av-peach">1</div>
+          <div>
+            <h3>Set your vibe</h3>
+            <p>Tell us your budget, move-in date, habits and dealbreakers. Takes two minutes, saves you two months.</p>
+          </div>
+        </div>
+        <div class="step-row" data-reveal="right">
+          <div class="step-num av-sky">2</div>
+          <div>
+            <h3>Swipe</h3>
+            <p>Browse a feed filtered to people who actually fit. Right means "let's talk", left means "absolutely not".</p>
+          </div>
+        </div>
+        <div class="step-row" data-reveal="left">
+          <div class="step-num av-mint">3</div>
+          <div>
+            <h3>Match &amp; move in</h3>
+            <p>Chat in the app, meet up, view places together, and split the keys. That's it — that's the whole thing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="stats-band" data-reveal="scale">
+        <div class="blob blob-coral" style="width:420px;height:420px;top:-160px;right:-100px;"></div>
+        <div class="stats-grid">
+          <div>
+            <div class="stat-num"><span data-count="12" data-suffix="K+">0</span></div>
+            <div class="stat-label">Students on the app</div>
+          </div>
+          <div>
+            <div class="stat-num"><span data-count="4.9" data-suffix="★">0</span></div>
+            <div class="stat-label">Average rating</div>
+          </div>
+          <div>
+            <div class="stat-num"><span data-count="30" data-suffix="+">0</span></div>
+            <div class="stat-label">Campuses covered</div>
+          </div>
+          <div>
+            <div class="stat-num"><span data-count="2" data-suffix="M+">0</span></div>
+            <div class="stat-label">Swipes and counting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Real ones</span>
+        <h2 class="headline" data-reveal style="--d:.08s">Don't take our word for it</h2>
+      </div>
+      <div class="cards-3">
+        <article class="card t-card" data-reveal>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"I posted in three Facebook groups and got one scam and a guy selling a mattress. On roommates+ I matched with my now-roommate in two days. We have a dishwasher schedule. Life is good."</p>
+          <div class="t-person">
+            <span class="av av-peach">👩‍🎓</span>
+            <div><h4>Priya S.</h4><p>3rd year, Health Sci</p></div>
+          </div>
+        </article>
+        <article class="card t-card" data-reveal style="--d:.1s">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"The filters are unreal. I'm allergic to cats and wake up at 6am — the app just… didn't show me cat people who sleep till noon. That alone is worth it."</p>
+          <div class="t-person">
+            <span class="av av-sky">🧑‍💻</span>
+            <div><h4>Marcus T.</h4><p>CS grad student</p></div>
+          </div>
+        </article>
+        <article class="card t-card" data-reveal style="--d:.2s">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"My friend and I found a third roommate for our lease through the 'interested in this unit' feature. We all wanted the same place — the app just introduced us."</p>
+          <div class="t-person">
+            <span class="av av-lilac">👩‍🎨</span>
+            <div><h4>Emma L.</h4><p>2nd year, Fine Arts</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREMIUM BAND -->
+  <section class="section-tight" id="premium">
+    <div class="container">
+      <div class="premium-band" data-reveal="scale" style="align-items:flex-start;">
+        <div style="flex:1 1 0;min-width:0;">
+          <span class="eyebrow" style="background:rgba(255,255,255,0.18);color:#fff;">roommates+ Premium</span>
+          <h2 class="headline" style="margin-top:18px;">Move in faster with Premium</h2>
+          <p style="color:rgba(255,255,255,0.85);margin-bottom:24px;">Everything in free, plus the tools that turn "still looking" into "lease signed".</p>
+
+          <!-- Free vs Premium comparison table -->
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.88rem;color:#fff;">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.25);font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.05em;font-size:0.75rem;">Feature</th>
+                  <th style="text-align:center;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.25);font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.05em;font-size:0.75rem;">Free</th>
+                  <th style="text-align:center;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.25);font-weight:700;color:#FFD580;text-transform:uppercase;letter-spacing:.05em;font-size:0.75rem;">Premium ✦</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">Daily likes (right swipes)</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">10 / day</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">Unlimited</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">Profiles you can browse</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">40 / day</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">Unlimited</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">Cold messages before matching</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">3 / day</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">Unlimited</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">AI roommate matching</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">1 / day</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">10 / day</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">Filters</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">Gender, location, age, move-in, budget, language</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">+ Hobbies, cleanliness, lifestyle, sleep schedule, occupation &amp; more</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">Security check</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">Auto verified badge</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">On-demand analysis, 3 / day</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">Profile images</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">✓</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">✓</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);">Profile tags</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);">5</td>
+                  <td style="text-align:center;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#FFD580;font-weight:600;">5</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 10px;">Lifestyle compatibility evaluation</td>
+                  <td style="text-align:center;padding:9px 10px;color:rgba(255,255,255,0.65);">✓</td>
+                  <td style="text-align:center;padding:9px 10px;color:#FFD580;font-weight:600;">✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pricing cards -->
+        <div style="display:flex;flex-direction:column;gap:16px;min-width:220px;flex-shrink:0;">
+          <!-- Weekly card -->
+          <div class="price-card" style="padding:20px 22px;">
+            <p class="price-alt" style="margin-top:0;margin-bottom:6px;">Weekly</p>
+            <div class="price-num" style="font-size:2rem;">CAD $10<small>/wk</small></div>
+            <p class="price-note" style="margin-bottom:0;">Billed weekly</p>
+          </div>
+          <!-- Monthly card — highlighted -->
+          <div class="price-card" style="padding:20px 22px;border:2px solid #FFD580;">
+            <div class="price-badge" style="background:#FFD580;color:#1a1a1a;">BEST VALUE — Save 25%</div>
+            <p class="price-alt" style="margin-top:10px;margin-bottom:6px;">Monthly</p>
+            <div class="price-num" style="font-size:2rem;">CAD $30<small>/4 wks</small></div>
+            <p class="price-note">Billed every 4 weeks · save vs weekly</p>
+            <p class="price-note" style="margin-bottom:16px;">7-day free trial · cancel anytime</p>
+            <a href="#download" class="btn">Start free trial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="download">
+    <div class="blob blob-peach" style="width:480px;height:480px;bottom:-180px;left:-120px;"></div>
+    <div class="blob blob-sky" style="width:420px;height:420px;top:-120px;right:-100px;animation-delay:4s;"></div>
+    <div class="container">
+      <h2 class="display" data-reveal>Your people are<br /><span class="grad-text">already here.</span></h2>
+      <p class="lead" data-reveal style="--d:.1s">Download roommates+ and start swiping. The free tier is genuinely free — no card, no catch.</p>
+      <div class="store-badges" data-reveal style="--d:.2s">
+        <a href="#" class="store-badge"><span class="sb-icon"></span><span><small>Download on the</small><strong>App Store</strong></span></a>
+        <a href="#" class="store-badge"><span class="sb-icon">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" style="margin-top:0;">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="/" class="brand brand-light">roommates<span class="brand-plus">+</span></a>
+          <p>Find your place. Find your people. The swipe-first way to find roommates you actually vibe with.</p>
+          <div class="store-badges">
+            <a href="#" class="store-badge"><span class="sb-icon"></span><span><small>Download on the</small><strong>App Store</strong></span></a>
+            <a href="#" class="store-badge"><span class="sb-icon">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/features.html">Features</a></li>
+            <li><a href="/#premium">Premium</a></li>
+            <li><a href="/waitlist/">Waitlist</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/partner.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; 2026 roommates+ — A S4S Product. All rights reserved.</span>
+        <a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

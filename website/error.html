@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error — roommates+</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    .error-wrap { padding: 0 24px 96px; }
+    .error-card {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 40px 28px;
+    }
+    .error-code {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      background: var(--gradient-soft);
+      border: 1px solid rgba(226,26,47,0.2);
+      border-radius: 100px;
+      padding: 8px 14px;
+      margin-bottom: 18px;
+    }
+    .error-card h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 14px; }
+    .error-card p { color: var(--text-muted); font-weight: 600; line-height: 1.7; margin-bottom: 24px; }
+    .error-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo" style="text-decoration:none;">roommates<span style="color:var(--primary)">+</span></a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/features.html" class="nav-link">Features</a>
+      <a href="/contact.html" class="nav-link">Contact</a>
+      <a href="/partner.html" class="nav-link">Partner With Us</a>
+    </div>
+    <a href="/#download" class="nav-cta">Get the App</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about.html" class="mobile-nav-link">About</a>
+    <a href="/features.html" class="mobile-nav-link">Features</a>
+    <a href="/contact.html" class="mobile-nav-link">Contact</a>
+    <a href="/partner.html" class="mobile-nav-link">Partner With Us</a>
+    <a href="/#download" class="mobile-nav-cta">Get the App</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="section-label">Something went wrong</div>
+    <h1>This page isn't<br /><span class="highlight">available</span></h1>
+    <p>It may have been moved, removed, or the URL might be incorrect.</p>
+  </div>
+
+  <section class="error-wrap">
+    <div class="error-card">
+      <div class="error-code">Error page</div>
+      <h2>Let's get you back on track.</h2>
+      <p>Use one of the links below to continue browsing roommates+, or contact us if you think this is a problem.</p>
+      <div class="error-actions">
+        <a href="/" class="btn-primary">Go Home</a>
+        <a href="/contact.html" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-nav-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">roommates<span style="color:var(--primary)">+</span></div>
+          <p>The most innovative social media platform for house hunting — and the most effective marketplace for property owners.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul><li><a href="/">Home</a></li><li><a href="/features.html">Features</a></li><li><a href="/about.html">About Us</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Owners</h4>
+          <ul><li><a href="/partner.html">Partner With Us</a></li><li><a href="/contact.html">Book a Demo</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul><li><a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a></li><li><a href="/contact.html">Contact Us</a></li></ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <div class="footer-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-and-conditions.html">Terms and Conditions</a><a href="/contact.html">Contact</a></div>
+        <div class="footer-copy">&copy; 2026 roommates+ — A S4S Product. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); } });
+  </script>
+</body>
+</html>

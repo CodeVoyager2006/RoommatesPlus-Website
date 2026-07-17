@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — roommates+</title>
+  <meta name="description" content="Swipe discovery, who-liked-you, real-time chat, advanced filters, AI matching and background checks — every roommates+ feature explained." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="/" class="brand">roommates<span class="brand-plus">+</span></a>
+      <nav class="nav-menu" aria-label="Main">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/features.html" class="nav-item active">Features</a>
+        <a href="/about.html" class="nav-item">About</a>
+        <a href="/blog.html" class="nav-item">Blog</a>
+        <a href="/contact.html" class="nav-item">Contact</a>
+      </nav>
+      <a href="/#download" class="btn btn-coral nav-get">Get the App</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/features.html" class="active">Features</a>
+    <a href="/about.html">About</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/#download" class="btn btn-coral">Get the App</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="subhero">
+    <div class="blob blob-sky" style="width:460px;height:460px;top:-140px;left:-140px;"></div>
+    <div class="blob blob-peach" style="width:420px;height:420px;top:-60px;right:-150px;animation-delay:4s;"></div>
+    <div class="container">
+      <span class="eyebrow" data-reveal>Features</span>
+      <h1 class="display" data-reveal style="--d:.08s">Built different.<br /><span class="grad-text">On purpose.</span></h1>
+      <p class="lead" data-reveal style="--d:.16s">Every feature exists to answer one question: "could I actually live with this person?" Here's how we help you find out — fast.</p>
+    </div>
+  </section>
+
+  <!-- FEATURE ROWS -->
+  <section>
+    <div class="container">
+
+      <!-- 1. Swipe discovery -->
+      <div class="feature-row">
+        <div class="fr-copy" data-reveal="left">
+          <span class="eyebrow">🔥 Discovery</span>
+          <h2>Swipe through people, not paragraphs</h2>
+          <p class="lead">Forget 800-word "about me" posts. Every profile is a card: photo, vibe chips, budget, move-in date. Swipe right to like, left to pass. That's the whole interface.</p>
+          <ul class="fr-checklist">
+            <li><span class="tick">✓</span> A feed filtered to your city and campus</li>
+            <li><span class="tick">✓</span> Lifestyle chips at a glance — tidy, night owl, pet-friendly</li>
+            <li><span class="tick">✓</span> Mutual likes become matches, instantly</li>
+          </ul>
+        </div>
+        <div class="fv-shell fv-peach" data-reveal="right">
+          <div class="mock-card">
+            <div class="mk-photo av-peach">🧑‍🎓<div class="like-stamp">LIKE</div></div>
+            <div class="mk-body">
+              <h4>Maya, 21</h4>
+              <p>2nd-year psych · 1.2 km from campus · $700–850</p>
+              <div class="mk-chips"><span>🌙 Night owl</span><span>🧼 Tidy</span><span class="hot">🐱 Cat-friendly</span><span>🍝 Cooks</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Likes -->
+      <div class="feature-row flip">
+        <div class="fr-copy" data-reveal="right">
+          <span class="eyebrow">💌 Likes</span>
+          <h2>See who already said yes</h2>
+          <p class="lead">The Likes tab lists everyone who swiped right on you. No guessing, no shooting your shot into the void — just pick from people who are already interested.</p>
+          <ul class="fr-checklist">
+            <li><span class="tick">✓</span> Free tier shows your first 4 likes</li>
+            <li><span class="tick">✓</span> Premium reveals the full list</li>
+            <li><span class="tick">✓</span> Like back to match on the spot</li>
+          </ul>
+        </div>
+        <div class="fv-shell fv-sky" data-reveal="left">
+          <div class="mock-card">
+            <div class="mk-list">
+              <div class="mk-like-row"><span class="av av-mint">🧑‍💻</span><div><h5>Dev, 23</h5><p>Liked you 2h ago</p></div><span class="heart">❤</span></div>
+              <div class="mk-like-row"><span class="av av-lilac">👩‍🎨</span><div><h5>Sofia, 22</h5><p>Liked you yesterday</p></div><span class="heart">❤</span></div>
+              <div class="mk-like-row"><span class="av av-peach">🧑‍🎤</span><div><h5>Jordan, 20</h5><p>Liked you yesterday</p></div><span class="heart">❤</span></div>
+              <div class="mk-like-row fogged"><span class="av av-sky">🧑‍🔬</span><div><h5>Someone new</h5><p>Liked you 3d ago</p></div><span class="heart">❤</span><div class="fog-pill"><span>UNLOCK WITH PREMIUM</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Chat -->
+      <div class="feature-row">
+        <div class="fr-copy" data-reveal="left">
+          <span class="eyebrow">💬 Chat</span>
+          <h2>From match to move-in plan, in one thread</h2>
+          <p class="lead">Real-time chat opens the moment you match. Sort out viewings, budgets and whose couch survives the move — without trading numbers with strangers.</p>
+          <ul class="fr-checklist">
+            <li><span class="tick">✓</span> Instant messaging with typing indicators</li>
+            <li><span class="tick">✓</span> Premium: cold-message before matching</li>
+            <li><span class="tick">✓</span> Your number stays private until you say so</li>
+          </ul>
+        </div>
+        <div class="fv-shell fv-mint" data-reveal="right">
+          <div class="mock-card">
+            <div class="mk-chat">
+              <div class="bubble them">heyy! saw we both want the College St place 👀</div>
+              <div class="bubble me">YES. viewing is saturday — wanna go together?</div>
+              <div class="bubble them">deal. also important: thoughts on a shared air fryer</div>
+              <div class="bubble me">…this is the beginning of something great</div>
+              <div class="bubble them typing"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Filters -->
+      <div class="feature-row flip">
+        <div class="fr-copy" data-reveal="right">
+          <span class="eyebrow">🎚️ Filters</span>
+          <h2>Filter like your sleep schedule depends on it</h2>
+          <p class="lead">Because it does. Dial in gender, occupation, pets, allergies, hobbies, languages, move-in window, lifestyle scales and amenities — and only see people who fit.</p>
+          <ul class="fr-checklist">
+            <li><span class="tick">✓</span> Hard filters: dealbreakers never show up</li>
+            <li><span class="tick">✓</span> Budget range with real listings in mind</li>
+            <li><span class="tick">✓</span> Premium unlocks lifestyle &amp; hobby filters</li>
+          </ul>
+        </div>
+        <div class="fv-shell fv-lilac" data-reveal="left">
+          <div class="mock-card">
+            <div class="mk-filters">
+              <h5>Budget</h5>
+              <div class="range"><div class="fill"></div><span class="thumb" style="left:22%;"></span><span class="thumb" style="left:72%;"></span></div>
+              <div class="range-vals"><span>$650</span><span>$1,100</span></div>
+              <h5>Lifestyle</h5>
+              <div class="mk-chips"><span class="hot">🚭 Non-smoker</span><span>🐶 Dog ok</span><span class="hot">🤫 Quiet hours</span><span>🎉 Hosts sometimes</span></div>
+              <h5>Move-in</h5>
+              <div class="mk-chips"><span class="hot">September</span><span>October</span><span>Flexible</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. AI + checks -->
+      <div class="feature-row">
+        <div class="fr-copy" data-reveal="left">
+          <span class="eyebrow">🤖 AI &amp; Safety</span>
+          <h2>AI matching, human peace of mind</h2>
+          <p class="lead">Premium's AI matchmaker scores compatibility across habits, schedules and dealbreakers — up to 10 curated matches a day. And when it gets serious, run an on-demand background check.</p>
+          <ul class="fr-checklist">
+            <li><span class="tick">✓</span> AI roommate matching, 10×/day</li>
+            <li><span class="tick">✓</span> Compatibility scores you can actually read</li>
+            <li><span class="tick">✓</span> On-demand profile background checks</li>
+          </ul>
+        </div>
+        <div class="fv-shell fv-coral" data-reveal="right">
+          <div class="mock-card">
+            <div class="mk-ai">
+              <div class="ai-row"><span class="av av-mint">🧑‍💻</span><div><h5>Dev, 23</h5><p>Early bird · tidy · quiet</p></div><span class="match-pct">94%</span></div>
+              <div class="ai-bar"><i style="width:94%;"></i></div>
+              <div class="ai-row"><span class="av av-lilac">👩‍🎨</span><div><h5>Sofia, 22</h5><p>Cooks · plant mom · non-smoker</p></div><span class="match-pct">89%</span></div>
+              <div class="ai-bar"><i style="width:89%;"></i></div>
+              <div class="ai-row"><span class="av av-peach">🧑‍🎤</span><div><h5>Jordan, 20</h5><p>Night owl · gamer · hosts</p></div><span class="match-pct">76%</span></div>
+              <div class="ai-bar"><i style="width:76%;"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FREE VS PREMIUM -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Free vs Premium</span>
+        <h2 class="headline" data-reveal style="--d:.08s">Free gets you in. Premium gets you moved in.</h2>
+      </div>
+      <div class="compare" data-reveal="scale">
+        <div class="compare-row head"><span>Feature</span><span>Free</span><span class="pro">Premium</span></div>
+        <div class="compare-row"><span>Daily likes (right swipes)</span><span class="part">10 / day</span><span class="yes">Unlimited</span></div>
+        <div class="compare-row"><span>Profiles you can browse</span><span class="part">40 / day</span><span class="yes">Unlimited</span></div>
+        <div class="compare-row"><span>See who liked you</span><span class="part">First 4</span><span class="yes">Everyone</span></div>
+        <div class="compare-row"><span>Cold messages before matching</span><span class="part">3 / day</span><span class="yes">Unlimited</span></div>
+        <div class="compare-row"><span>AI roommate matching</span><span class="part">1 / day</span><span class="yes">10 / day</span></div>
+        <div class="compare-row"><span>Filters</span><span class="part">Gender, location, age, move-in, budget, language</span><span class="yes">+ Hobbies, cleanliness, lifestyle, sleep schedule, occupation &amp; more</span></div>
+        <div class="compare-row"><span>Security check</span><span class="part">Auto verified badge</span><span class="yes">On-demand analysis, 3 / day</span></div>
+        <div class="compare-row"><span>Profile images</span><span class="yes">✓</span><span class="yes">✓</span></div>
+        <div class="compare-row"><span>Profile tags</span><span class="yes">5</span><span class="yes">5</span></div>
+        <div class="compare-row"><span>Lifestyle compatibility evaluation</span><span class="yes">✓</span><span class="yes">✓</span></div>
+      </div>
+      <div style="text-align:center;margin-top:44px;" data-reveal>
+        <a href="/#premium" class="btn btn-coral btn-lg">Try Premium free for 7 days</a>
+        <p style="margin-top:14px;font-size:0.88rem;color:var(--ink-3);font-weight:600;">CAD $10/week or CAD $30/4 weeks (Save 25%) · 7-day free trial · cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="/" class="brand brand-light">roommates<span class="brand-plus">+</span></a>
+          <p>Find your place. Find your people. The swipe-first way to find roommates you actually vibe with.</p>
+          <div class="store-badges">
+            <a href="#" class="store-badge"><span class="sb-icon"></span><span><small>Download on the</small><strong>App Store</strong></span></a>
+            <a href="#" class="store-badge"><span class="sb-icon">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/features.html">Features</a></li>
+            <li><a href="/#premium">Premium</a></li>
+            <li><a href="/waitlist/">Waitlist</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/partner.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; 2026 roommates+ — A S4S Product. All rights reserved.</span>
+        <a href="mailto:service@roommatesplus.ca">service@roommatesplus.ca</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
